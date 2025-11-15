@@ -35,26 +35,6 @@ function DateCounter() {
   const date = new Date("june 21 2027");
   date.setDate(date.getDate() + count);
 
-  const dec = function () {
-    dispatch({ type: "dec" });
-  };
-
-  const inc = function () {
-    dispatch({ type: 'inc' });
-  };
-
-  const defineCount = function (e) {
-    dispatch({ type: 'setCount', payload: Number(e.target.value) });
-  };
-
-  const defineStep = function (e) {
-    dispatch({ type: 'setStep', payload: Number(e.target.value) })
-  };
-
-  const reset = function () {
-    dispatch({ type: 'reset' });
-  };
-
   return (
     <div className="counter">
       <div>
@@ -63,21 +43,21 @@ function DateCounter() {
           min="0"
           max="10"
           value={step}
-          onChange={defineStep}
+          onChange={(e) => dispatch({ type: 'setStep', payload: Number(e.target.value) })}
         />
         <span>{step}</span>
       </div>
 
       <div>
-        <button onClick={dec}>-</button>
-        <input value={count} onChange={defineCount} />
-        <button onClick={inc}>+</button>
+        <button onClick={() => dispatch({ type: "dec" })}>-</button>
+        <input value={count} onChange={(e) => dispatch({ type: 'setCount', payload: Number(e.target.value) })} />
+        <button onClick={() => dispatch({ type: 'inc' })}>+</button>
       </div>
 
       <p>{date.toDateString()}</p>
 
       <div>
-        <button onClick={reset}>Reset</button>
+        <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
       </div>
     </div>
   );
