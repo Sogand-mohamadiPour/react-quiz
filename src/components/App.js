@@ -10,7 +10,8 @@ const initialState = {
   questions: [],
 
   // 'loading', 'error', 'active', 'finished'
-  status: 'loading'
+  status: 'loading',
+  index: 0,
 }
 
 function reducer(state, action) {
@@ -35,10 +36,10 @@ function reducer(state, action) {
     default:
       throw new Error("action unknown")
   }
-}
+};
 
 export default function App() {
-  const [{ questions, status }, dispatch] = useReducer(reducer, initialState);
+  const [{ questions, status, index }, dispatch] = useReducer(reducer, initialState);
 
   const numQuestions = questions.length;
 
@@ -47,7 +48,7 @@ export default function App() {
       .then(res => res.json())
       .then(data => dispatch({ type: 'dataReceived', payload: data }))
       .catch((err) => dispatch({ type: 'dataFailed' }))
-  }, [])
+  }, []);
 
   return (
     <>
@@ -60,7 +61,7 @@ export default function App() {
             numQuestions={numQuestions}
             dispatch={dispatch}
           />}
-          {status === 'active' && <Questions />}
+          {status === 'active' && <Questions question={questions[index]} />}
         </Main>
       </div>
     </>
