@@ -1,38 +1,66 @@
 ## still developing...
 
-# React Quiz Application
+# React Quiz Application🎯
 
-A sleek, interactive quiz app built with **React**. This project lets users take a quiz consisting of multiple-choice questions, monitor their progress and score in real-time, and view a summary of results upon completion.
+This app includes **React-only questions**, each with their own score value. You can see your points grow as you answer and view your final total at the end.
 
-## 🚀 Features  
-- Multiple-choice questions with immediate feedback  
-- Score tracking throughout the quiz  
-- Responsive design for desktop and mobile  
-- Easy to extend: add more questions, change styling, or integrate with backend  
+---
 
-## 🛠️ Built With  
-- React (functional components, hooks)  
-- useState, useEffect, and useReducer hooks for state and logic management  
-- CSS 
-- JavaScript (ES6+)
+## 🚀 Live Demo  
+👉 **[View on Vercel](https://react-quiz-three-phi.vercel.app/)**
 
-## 🎯 Usage  
-1. Start the app.  
-2. Select answers for each question.  
-3. Track your score as you proceed.  
-4. View a summary of your results at the end.  
-5. Review correct vs incorrect answers or retake the quiz.  
+---
 
-## ✨ Future Enhancements  
-- Add user authentication and store high scores  
-- Enable multiple quiz topics or difficulty levels  
-- Include timer functionality or animated transitions  
-- Integrate backend API for dynamic question loading
+## 🌟 Features
+
+- **React-only quiz questions**  
+- **useReducer-powered state management**  
+- **Timer** for completing the quiz  
+- **Score tracking**  
+  - Each question has its own score  
+  - You see your score **live while answering**  
+  - Final total score displayed at the end  
+- **Correct & wrong answer feedback**  
+- **Clean UI with step-by-step question flow**
+
+---  
+
+## 🛠️ Tech Stack
+
+- **React**  
+- **useReducer** (main logic)  
+- **JavaScript (ES6+)**  
+- **CSS**
+
+---
+## 🧪 How It Works
+
+1. Timer starts immediately  
+2. Each question shows multiple choices  
+3. When you select an answer:
+   - You instantly see if it’s **correct** or **wrong**
+   - Your score updates  
+4. At the end, your **final score** appears  
+5. Restart functionality will be added later
+
+---
 
 ## 📥 Getting Started  
+
 ### Prerequisites  
-- Node.js & npm installe
-- Run the app by **npm start** in terminal
+- Node.js & npm installed
+
+### How to Run the App  
+This project uses a **fake API (json-server)** for loading the questions.  
+You must run **both** the React app and the server:
+
+```bash
+npm run start    # Starts the React app
+npm run server   # Starts the json-server (fake API)
+```
+The app will not work unless both commands are running.💥
+
+---
 
 ### Installation  
 ```bash
