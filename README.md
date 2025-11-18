@@ -64,7 +64,7 @@ The app will not work unless both commands are running.💥
 
 ### Installation  
 ```bash
-git clone https://github.com/YourUsername/react-quiz.git  
+git clone https://github.com/Sogand-mohamadiPour/react-quiz.git  
 cd react-quiz  
 npm install
 ```
