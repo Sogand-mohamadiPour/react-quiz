@@ -26,7 +26,7 @@ body {
   min-height: 100vh;
   color: var(--color-light);
   background-color: var(--color-darkest);
-  padding: 3.2rem;
+  padding: 1.6rem;
 }
 
 .app {
@@ -37,15 +37,18 @@ body {
 }
 
 .main {
-  width: 50rem;
+  width: 100%;
+  max-width: 50rem;
 }
 
 .app-header {
-  width: 66rem;
+  width: 100%;
+  max-width: 66rem;
   margin-bottom: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.6rem;
 }
 
 .error {
@@ -89,6 +92,10 @@ h4 {
   align-items: center;
 }
 
+.start .btn-ui {
+  margin-left: 0;
+}
+
 .progress {
   margin-bottom: 4rem;
   display: grid;
@@ -101,6 +108,7 @@ h4 {
 
 progress {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   height: 12px;
   grid-column: 1 / -1;
@@ -141,7 +149,7 @@ progress {
 }
 
 .btn-ui {
-  float: right;
+  margin-left: auto;
 }
 
 .options {
@@ -204,13 +212,26 @@ progress {
   font-size: 1.4rem;
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+footer .btn-ui {
+  margin-left: auto;
+}
+
 .timer {
-  float: left;
   font-size: 1.8rem;
   color: var(--color-medium);
   border: 2px solid var(--color-dark);
   padding: 1.35rem 2.8rem;
   border-radius: 100px;
+  flex-shrink: 0;
 }
 
 /* CREDIT: https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
@@ -256,4 +277,212 @@ progress {
 .counter * {
   font-size: inherit;
   padding: 0.8rem;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 1.2rem;
+  }
+
+  html {
+    font-size: 55%;
+  }
+
+  .app-header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2.4rem;
+    gap: 1.2rem;
+  }
+
+  .app-header img {
+    width: 10rem;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 2.4rem;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .progress {
+    font-size: 1.4rem;
+    margin-bottom: 2.4rem;
+    gap: 0.8rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+  }
+
+  .btn-option:not([disabled]):hover {
+    transform: translateX(0.8rem);
+  }
+
+  .answer {
+    transform: translateX(1.2rem);
+  }
+
+  .result {
+    font-size: 1.6rem;
+    padding: 1.6rem 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .result span {
+    font-size: 1.8rem;
+  }
+
+  .highscore {
+    font-size: 1.4rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .timer {
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+
+  .options {
+    gap: 1rem;
+    margin-bottom: 2.4rem;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+  }
+
+  footer .btn-ui {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .btn-ui {
+    margin-left: auto;
+  }
+
+  .error {
+    font-size: 1.4rem;
+    padding: 1.6rem;
+  }
+
+  .loader-container {
+    margin-top: 2.4rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablet devices (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+
+  html {
+    font-size: 58%;
+  }
+
+  .app-header {
+    margin-bottom: 3.2rem;
+  }
+
+  .app-header img {
+    width: 12rem;
+  }
+
+  h1 {
+    font-size: 4.8rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+    margin-bottom: 3.2rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .progress {
+    font-size: 1.6rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+    padding: 1.1rem 2.2rem;
+  }
+
+  .result {
+    font-size: 1.8rem;
+    padding: 1.8rem 1.6rem;
+  }
+
+  .result span {
+    font-size: 2rem;
+  }
+
+  .highscore {
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+  }
+
+  .timer {
+    font-size: 1.6rem;
+    padding: 1.2rem 2.4rem;
+  }
+
+  footer {
+    gap: 1.4rem;
+  }
+}
+
+/* Small desktop / Large tablet (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 2.4rem;
+  }
+
+  .app-header {
+    max-width: 60rem;
+  }
+
+  .main {
+    max-width: 48rem;
+  }
+}
+
+/* Large desktop (1025px and above) */
+@media (min-width: 1025px) {
+  body {
+    padding: 3.2rem;
+  }
 }
