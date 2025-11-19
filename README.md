@@ -1,5 +1,3 @@
-## still developing...
-
 # React Quiz Application🎯
 
 This app includes **React-only questions**, each with their own score value. You can see your points grow as you answer and view your final total at the end.
