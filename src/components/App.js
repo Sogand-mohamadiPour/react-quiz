@@ -37,7 +37,10 @@ function reducer(state, action) {
       };
 
     case 'start':
-      return { ...state, status: 'active' };
+      return {
+        ...state,
+        status: 'active'
+      };
 
     case 'newAnswer':
       const question = state.questions.at(state.index);
@@ -49,7 +52,11 @@ function reducer(state, action) {
       };
 
     case 'nextQuestion':
-      return { ...state, index: state.index + 1, answer: null };
+      return {
+        ...state,
+        index: state.index + 1,
+        answer: null
+      };
 
     case 'finish':
       const newHighscore = state.points > state.highscore ? state.points : state.highscore;
