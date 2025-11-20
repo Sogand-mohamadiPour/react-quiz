@@ -4,11 +4,6 @@ This app includes **React-only questions**, each with their own score value. You
 
 ---
 
-## 🚀 Live Demo  
-👉 **[View on Vercel](https://react-quiz-three-phi.vercel.app/)**
-
----
-
 ## 🌟 Features
 
 - **React-only quiz questions**  
@@ -38,8 +33,8 @@ This app includes **React-only questions**, each with their own score value. You
 3. When you select an answer:
    - You instantly see if it’s **correct** or **wrong**
    - Your score updates  
-4. At the end, your **final score** appears  
-5. Restart functionality will be added later
+4. At the end, your **final score** and **highest score** appears  
+5. Restart functionality is now added
 
 ---
 
