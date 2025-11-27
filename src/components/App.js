@@ -101,7 +101,7 @@ export default function App() {
     prev + cur.points, 0);
 
   useEffect(function () {
-    fetch('/exam/')
+    fetch('https://examination-zdui.onrender.com/exam/')
       .then(res => res.json())
       .then(data => dispatch({ type: 'dataReceived', payload: data }))
       .catch(() => dispatch({ type: 'dataFailed' }))

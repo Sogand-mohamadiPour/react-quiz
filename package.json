@@ -39,6 +39,5 @@
   },
   "devDependencies": {
     "json-server": "^0.17.4"
-  },
-  "proxy": "https://examination-zdui.onrender.com"
+  }
 }
