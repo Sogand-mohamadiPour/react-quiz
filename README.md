@@ -44,14 +44,11 @@ This app includes **React-only questions**, each with their own score value. You
 - Node.js & npm installed
 
 ### How to Run the App  
-This project uses a **fake API (json-server)** for loading the questions.  
-You must run **both** the React app and the server:
+This project uses an **API ( made by [Pooyan Saeedinia](https://github.com/pooyansaeedinia)** ) for loading the questions.  
 
 ```bash
 npm run start    # Starts the React app
-npm run server   # Starts the json-server (fake API)
 ```
-The app will not work unless both commands are running.💥
 
 ---
 
