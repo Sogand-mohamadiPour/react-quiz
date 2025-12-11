@@ -10,12 +10,11 @@ import Progress from "./Progress";
 import FinishedScreen from "./FinishedScreen";
 import Timer from "./Timer";
 import Footer from "./Footer";
+import { useQuiz } from "../contexts/QuizContext";
 
 
 export default function App() {
-
-
-
+  const { status } = useQuiz();
 
   return (
     <>
@@ -24,29 +23,13 @@ export default function App() {
         <Main>
           {status === 'loading' && <Loader />}
           {status === 'error' && <Error />}
-          {status === 'ready' && <StartScreen
-            numQuestions={numQuestions}
-            dispatch={dispatch}
-          />}
+          {status === 'ready' && <StartScreen />}
           {status === 'active' && (
             <>
-              <Progress
-                index={index}
-                numQuestions={numQuestions}
-                points={points}
-                maxPossiblePoints={maxPossiblePoints}
-                answer={answer}
-              />
-              <Questions
-                question={questions[index]}
-                dispatch={dispatch}
-                answer={answer}
-              />
+              <Progress />
+              <Questions />
               <Footer>
-                <Timer
-                  dispatch={dispatch}
-                  secondsRemaining={secondsRemaining}
-                />
+                <Timer />
                 <NextButton
                   dispatch={dispatch}
                   answer={answer}
