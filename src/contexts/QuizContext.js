@@ -121,7 +121,7 @@ function useQuiz() {
     return context;
 }
 
-export { QuizContext, useQuiz };
+export { QuizContext, QuizProvider, useQuiz };
 
 
 
