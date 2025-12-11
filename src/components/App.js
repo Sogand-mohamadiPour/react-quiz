@@ -30,21 +30,11 @@ export default function App() {
               <Questions />
               <Footer>
                 <Timer />
-                <NextButton
-                  dispatch={dispatch}
-                  answer={answer}
-                  index={index}
-                  numQuestions={numQuestions}
-                />
+                <NextButton />
               </Footer>
             </>
           )}
-          {status === 'finished' && (<FinishedScreen
-            points={points}
-            maxPossiblePoints={maxPossiblePoints}
-            highscore={highscore}
-            dispatch={dispatch}
-          />)}
+          {status === 'finished' && (<FinishedScreen />)}
         </Main>
       </div>
     </>
