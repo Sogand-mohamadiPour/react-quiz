@@ -14,12 +14,6 @@ import Footer from "./Footer";
 
 export default function App() {
 
-  useEffect(function () {
-    fetch('https://examination-zdui.onrender.com/exam/')
-      .then(res => res.json())
-      .then(data => dispatch({ type: 'dataReceived', payload: data }))
-      .catch(() => dispatch({ type: 'dataFailed' }))
-  }, []);
 
 
 

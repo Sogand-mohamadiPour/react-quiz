@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 const QuizContext = createContext();
 
@@ -84,8 +84,39 @@ function reducer(state, action) {
 
 function QuizProvider({ children }) {
     const [{ questions, status, index, answer, points, highscore, secondsRemaining }, dispatch] = useReducer(reducer, initialState);
+
+    const numQuestions = questions.length;
+    const maxPossiblePoints = questions.reduce((prev, cur) =>
+        prev + cur.points, 0);
+
+    useEffect(function () {
+        fetch('https://examination-zdui.onrender.com/exam/')
+            .then(res => res.json())
+            .then(data => dispatch({ type: 'dataReceived', payload: data }))
+            .catch(() => dispatch({ type: 'dataFailed' }))
+    }, []);
+
+    return (
+        <QuizContext.Provider
+            value={{
+                questions,
+                status,
+                index,
+                answer,
+                points,
+                highscore,
+                secondsRemaining,
+                dispatch,
+            }}
+        >
+            {children}
+        </QuizContext.Provider>
+    );
+};
+
+function useQuiz() {
+
 }
 
-const numQuestions = questions.length;
-const maxPossiblePoints = questions.reduce((prev, cur) =>
-    prev + cur.points, 0);
+
+
