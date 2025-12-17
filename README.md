@@ -47,7 +47,7 @@ This app includes **React-only questions**, each with their own score value. You
 This project uses an **API ( made by [Pooyan Saeedinia](https://github.com/pooyansaeedinia)** ) for loading the questions.  
 
 ```bash
-npm run start    # Starts the React app
+npm run start
 ```
 
 ---
